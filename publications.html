@@ -91,7 +91,7 @@
     </nav>
 
     <main id="articleMain"
-        class="container mx-auto max-w-screen-xl p-8 dark:text-white [&>h1]:text-xl [&>h1]:font-bold [&>h2]:text-lg [&>h2]:font-semibold [&>p]:dark:text-zinc-300 [&>p]:text-zinc-600 [&_img]:rounded-md [&_code]:rounded-md">
+        class="container mx-auto max-w-screen-xl p-8 dark:text-white [&_a]:text-blue-400 [&_a]:hover:text-blue-600 [&>h1]:text-xl [&>h1]:font-bold [&>h2]:text-lg [&>h2]:font-semibold [&>p]:dark:text-zinc-300 [&>p]:text-zinc-600 [&_img]:rounded-md [&_code]:rounded-md">
 
         <script id="overview-hb" type="text/x-handlebars">
             {{#each categories}}
@@ -121,12 +121,20 @@
                 ·
                 <a href="mailto:reachvishm+site@gmail.com" class="hover:text-zinc-300 duration-200">Contact</a>
             </div>
-            <div class="flex space-x-3 justify-self-end">
+            <div class="flex space-x-3 justify-self-end hidden dark:flex">
                 <a href="https://github.com/justanotherbyte">
                     <img src="images/github-mark-white.svg" alt="GitHub page" class="h-8 w-8">
                 </a>
                 <a href="https://www.linkedin.com/in/viswa-marepalli/">
                     <img src="images/InBug-White.png" alt="GitHub page" class="h-8 w-8">
+                </a>
+            </div>
+            <div class="flex space-x-3 justify-self-end visible dark:hidden">
+                <a href="https://github.com/justanotherbyte">
+                    <img src="images/github-mark.png" alt="GitHub page" class="h-8 w-8">
+                </a>
+                <a href="https://www.linkedin.com/in/viswa-marepalli/">
+                    <img src="images/InBug-Black.png" alt="GitHub page" class="h-8 w-8">
                 </a>
             </div>
         </div>
