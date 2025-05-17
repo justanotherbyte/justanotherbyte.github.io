@@ -85,7 +85,7 @@
     </nav>
 
     <main class="container mx-auto max-w-screen-xl p-8">
-        <section id="aboutme" class="grid md:grid-cols-2 sm:grid-cols-1 dark:bg-zinc-800 rounded-lg">
+        <section id="aboutme" class="grid md:grid-cols-2 sm:grid-cols-1 dark:bg-zinc-800 rounded-lg bg-zinc-100">
             <div>
                 <img src="images/nasa.jpg" alt="Picture of me"
                     class="md:rounded-l-lg w-full h-full object-cover sm:rounded-none">
@@ -148,12 +148,12 @@
                     class="dark:text-white absolute right-0 text-xl hover:text-zinc-400 duration-200 transition">View
                     All ></a>
             </div>
-            <hr class="my-4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+            <hr class="my-4 h-0.5 border-t-0 bg-zinc-300 dark:bg-white/10" />
 
             <div id="projects-grid" class="grid md:grid-cols-4 gap-x-2 sm:grid-cols-1 md:gap-y-0 gap-y-2">
                 <script id="projects-hb" type="text/x-handlebars">
                     {{#each repos}}
-                    <div class="dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='https://github.com/{{this.author}}/{{this.name}}'">
+                    <div class="bg-zinc-100 dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='https://github.com/{{this.author}}/{{this.name}}'">
                         <a class="dark:text-white" href="https://github.com/{{this.author}}/{{this.name}}">{{this.name}}</a>
                         <p class="dark:text-zinc-400 mt-1">{{this.description}}</p>
                         <div class="flex relative">
@@ -173,12 +173,12 @@
                     class="dark:text-white absolute right-0 text-xl hover:text-zinc-400 duration-200 transition">View
                     All ></a>
             </div>
-            <hr class="my-4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+            <hr class="my-4 h-0.5 border-t-0 bg-zinc-300 dark:bg-white/10" />
 
             <div id="publications-grid" class="grid md:grid-cols-4 gap-x-2 sm:grid-cols-1 md:gap-y-0 gap-y-2">
                 <script id="publications-hb" type="text/x-handlebars">
                     {{#each articles}}
-                    <div class="dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='publications.html?slug={{this.slug}}'">
+                    <div class="bg-zinc-100 dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='publications.html?slug={{this.slug}}'">
                         <a class="dark:text-white" href="publications.html?slug={{this.slug}}">{{this.name}}</a>
                         <p class="dark:text-zinc-400 mt-1">{{this.description}}</p>
                     </div>
