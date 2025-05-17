@@ -155,7 +155,7 @@
                     {{#each repos}}
                     <div class="bg-zinc-100 dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='https://github.com/{{this.author}}/{{this.name}}'">
                         <a class="dark:text-white" href="https://github.com/{{this.author}}/{{this.name}}">{{this.name}}</a>
-                        <p class="dark:text-zinc-400 mt-1">{{this.description}}</p>
+                        <p class="text-zinc-600 dark:text-zinc-400 mt-1">{{this.description}}</p>
                         <div class="flex relative">
                             <h3 class="text-[{{this.languageColor}}]">{{this.language}}</h3>
                             <h3 class="absolute right-0 dark:text-white">{{this.stars}} ⭐</h3>
@@ -180,7 +180,7 @@
                     {{#each articles}}
                     <div class="bg-zinc-100 dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='publications.html?slug={{this.slug}}'">
                         <a class="dark:text-white" href="publications.html?slug={{this.slug}}">{{this.name}}</a>
-                        <p class="dark:text-zinc-400 mt-1">{{this.description}}</p>
+                        <p class="text-zinc-600 dark:text-zinc-400 mt-1">{{this.description}}</p>
                     </div>
                     {{/each}}
                 </script>
