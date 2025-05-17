@@ -1,0 +1,188 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="js/effects.js" defer></script>
+    <script src="js/content.js" defer></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="icon" type="image/svg" href="/images/icon.svg">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Viswa Marepalli</title>
+</head>
+
+<body class="ibm-plex-mono-regular dark:bg-zinc-900">
+    <nav x-data="{ open: true }" class="bg-white border-zinc-200 dark:bg-zinc-900 sticky top-0 z-40">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="images/icon.svg" class="h-8 rounded-lg" alt="Viswa's Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Viswa
+                    Marepalli</span>
+            </a>
+            <button @click="open = !open" data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-zinc-500 rounded-lg md:hidden hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="w-full md:block md:w-auto" id="navbar-default" x-show="open" x-transition>
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-zinc-100 rounded-lg bg-zinc-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-zinc-800 md:dark:bg-zinc-900 dark:border-zinc-700">
+                    <li id="navItem">
+                        <a href="#aboutme"
+                            class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-600 md:p-0 dark:text-white md:dark:text-blue-500"
+                            aria-current="page">About Me</a>
+                    </li>
+                    <li id="navItem">
+                        <a href="#projects"
+                            class="block py-2 px-3 text-zinc-900 rounded-sm hover:bg-zinc-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent">Projects</a>
+                    </li>
+                    <li id="navItem">
+                        <a href="#publications"
+                            class="block py-2 px-3 text-zinc-900 rounded-sm hover:bg-zinc-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent">Publications</a>
+                    </li>
+                    <li id="navItem">
+                        <a href="data/cv.pdf"
+                            class="block py-2 px-3 text-zinc-900 rounded-sm hover:bg-zinc-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                            Curriculum Vitae
+                        </a>
+                    </li>
+                    <li id="navItem">
+                        <a href="mailto:reachvishm+site@gmail.com"
+                            class="block py-2 px-3 text-zinc-900 rounded-sm hover:bg-zinc-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact
+                            Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto max-w-screen-xl p-8">
+        <section id="aboutme" class="grid md:grid-cols-2 sm:grid-cols-1 dark:bg-zinc-800 rounded-lg">
+            <div>
+                <img src="images/nasa.jpg" alt="Picture of me" class="md:rounded-l-lg w-full h-full object-cover sm:rounded-none">
+            </div>
+            <div class="relative p-8">
+                <div class="flex space-x-2">
+                    <h1 class="text-xl dark:text-white" id="welcomeText">Hey!</h1>
+                    <p class="animate-pulse dark:text-white"> ▌ </p>
+                </div>
+
+                <br>
+                <p class="dark:text-zinc-200">Hey there! I'm Viswa, an incoming <a
+                        class="font-semibold underline dark:hover:text-zinc-400 duration-200"
+                        href="https://www.imperial.ac.uk/study/courses/undergraduate/electronic-information-meng/">Electronic
+                        and Information Engineering</a> student at <a
+                        class="text-blue-500 font-semibold underline duration-200 hover:text-blue-700"
+                        href="https://imperial.ac.uk/">Imperial College London</a>. My interests lie primarily in
+                    Robotics, FPGAs and Quantum Computing.</p>
+                <br>
+                <p class="dark:text-zinc-200">
+                    While my interests lie pretty far & wide, my ambition lies in developing powerful Robotics for
+                    interstellar travel, conducting FPGA research, both for Robotics and experimental Physics, and
+                    advancing Quantum Computing.
+                </p>
+                <br>
+                <p class="dark:text-zinc-200">
+                    Until now, I spent the better part of the previous 2 years studying the <a
+                        href="https://www.ibo.org/programmes/diploma-programme/"
+                        class="text-blue-500 font-semibold underline hover:text-blue-700 duration-200">International
+                        Baccalaureate Diploma Programme</a> where I achieved 42/45 points.
+                </p>
+                <br>
+                <p class="dark:text-zinc-200">
+                    The IB piqued my interest in academic research, having written papers on <a
+                        class="underline duration-200 hover:text-zinc-400" href="/">modelling populations using
+                        differential equations and simplex-based
+                        optimizations</a> and experimenting with <a class="underline duration-200 hover:text-zinc-400"
+                        href="/">Euler's Pendulum and Lagrangian Mechanics</a> for the first time.
+                </p>
+                <br>
+                <p class="dark:text-zinc-200">
+                    I'm also an avid <a href="https://codeforces.com/profile/viswa_m" class="underline duration-200 hover:text-zinc-400">competitive programmer</a>, calisthenics enjoyer and photographer (the photograph here was taken by me!).
+                </p>
+                <br>
+                <p class="dark:text-zinc-200 [&>a]:text-blue-500 [&>a]:duration-200 [&>a]:hover:text-blue-700"><a
+                        href="mailto:reachvishm+site@gmail.com">Email</a> /
+                    <a href="data/cv.pdf">CV</a> / <a href="https://scholar.google.com">Google Scholar</a> /
+                    <a href="https://www.linkedin.com/in/viswa-marepalli/">LinkedIn</a> /
+                    <a href="https://github.com/justanotherbyte">GitHub</a>
+                </p>
+            </div>
+        </section>
+        <br>
+        <section id="projects">
+            <div class="relative flex w-full">
+                <h1 class="dark:text-white text-xl">Projects</h1>
+                <a href="https://github.com/justanotherbyte"
+                    class="dark:text-white absolute right-0 text-xl hover:text-zinc-400 duration-200 transition">View
+                    All ></a>
+            </div>
+            <hr class="my-4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+
+            <div id="projects-grid" class="grid md:grid-cols-4 gap-x-2 sm:grid-cols-1 md:gap-y-0 gap-y-2">
+                <script id="projects-hb" type="text/x-handlebars">
+                    {{#each repos}}
+                    <div class="dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='https://github.com/{{this.author}}/{{this.name}}'">
+                        <a class="dark:text-white" href="https://github.com/{{this.author}}/{{this.name}}">{{this.name}}</a>
+                        <p class="dark:text-zinc-400 mt-1">{{this.description}}</p>
+                        <div class="flex relative">
+                            <h3 class="text-[{{this.languageColor}}]">{{this.language}}</h3>
+                            <h3 class="absolute right-0 dark:text-white">{{this.stars}} ⭐</h3>
+                        </div>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+        </section>
+        <br>
+        <section id="publications">
+            <div class="relative flex w-full">
+                <h1 class="dark:text-white text-xl">Publications</h1>
+                <a href="publications.html"
+                    class="dark:text-white absolute right-0 text-xl hover:text-zinc-400 duration-200 transition">View
+                    All ></a>
+            </div>
+            <hr class="my-4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+
+            <div id="publications-grid" class="grid md:grid-cols-4 gap-x-2 sm:grid-cols-1 md:gap-y-0 gap-y-2">
+                <script id="publications-hb" type="text/x-handlebars">
+                    {{#each articles}}
+                    <div class="dark:bg-zinc-800 rounded-md p-4 cursor-pointer" onclick="location.href='publications.html?slug={{this.slug}}'">
+                        <a class="dark:text-white" href="publications.html?slug={{this.slug}}">{{this.name}}</a>
+                        <p class="dark:text-zinc-400 mt-1">{{this.description}}</p>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container mx-auto max-w-screen-xl p-8">
+        <div class="grid grid-cols-3 dark:text-zinc-500">
+            <div>© 2025 Viswa Marepalli</div>
+            <div class="text-center justify-self-center">
+                <a href="#aboutme" class="hover:text-zinc-300 duration-200">About</a>
+                ·
+                <a href="mailto:reachvishm+site@gmail.com" class="hover:text-zinc-300 duration-200">Contact</a>
+            </div>
+            <div class="flex space-x-3 justify-self-end">
+                <a href="https://github.com/justanotherbyte">
+                    <img src="images/github-mark-white.svg" alt="GitHub page" class="h-8 w-8">
+                </a>
+                <a href="https://www.linkedin.com/in/viswa-marepalli/">
+                    <img src="images/InBug-White.png" alt="GitHub page" class="h-8 w-8">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

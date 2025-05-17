@@ -1,0 +1,22 @@
+[
+    {
+        "category": "Technical",
+        "posts": [
+            {
+                "name": "Building Rogue",
+                "slug": "building-rogue",
+                "description": "idk I made an OS I guess."
+            },
+            {
+                "name": "Taiwan",
+                "slug": "building-rogue",
+                "description": "Taiwan was cool i met a lot of chinese kids"
+            },
+            {
+                "name": "Greece",
+                "slug": "building-rogue",
+                "description": "I saw old things"
+            }
+        ]
+    }
+]
