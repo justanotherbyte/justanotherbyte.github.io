@@ -41,4 +41,35 @@ We'll go into the details of the `#[no_mangle]` macro a bit later, but first I'd
 
 <br>
 
-*More coming soon - signing off for now: 17/05/2025*
+## Binary Compilation
+<br>
+
+Normally, when we compile a Rust project by running `cargo build`, the compiler will compile for our host platform, i.e, to naively simplify, if you compile on a Windows machine, the compiler will compile a Windows executable, but if you compile on a Macbook, the compiler will compile an executable Mac OS can understand. What's different here is the underlying CPU architectures. It's why many programs that run on Intel Macbooks may need updates and re-compilation to run on Apple Silicon (M1, M2, M3, etc) Macbooks.
+
+<br>
+
+So what do we compile for? Well, surely we'd have to compile for the Raspberry Pi 4B's architecture. After too much research, I found the architecture we must target is `aarch64-unknown-none-softfloat`. To streamline this, I'd suggest creating a `.cargo/config.toml`.
+
+<br>
+
+```toml
+# .cargo/config.toml
+
+[build]
+target = "aarch64-unknown-none-softfloat"
+rustflags = [
+    "-C",
+    "target-cpu=cortex-a72",
+    "-C",
+    "link-arg=--script=./kernel.ld",
+]
+```
+
+<br>
+
+This configuration also appends the `target-cpu` and `link-arg` compilation flags, which tell the compiler our CPU is the Cortex A72 (I'm unsure as to whether adding this flag did anything useful, but it can't hurt to have it) and telling it where to find our **linker script**.
+
+<br>
+
+*More coming soon, last updated: 18 May 15:24*
+
