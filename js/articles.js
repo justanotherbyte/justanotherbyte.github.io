@@ -1,4 +1,18 @@
-async function renderArticle(slug) {  
+var canLatexLoad = false;
+
+function renderLatex() {
+    let elements = document.querySelectorAll(".latex, inlinelatex");
+
+    for (let i = 0; i < elements.length; i++) {
+        let el = elements[i];
+        katex.render(el.innerText, el);
+        if (el.tagName == "CODE") {
+            el.parentElement.classList.add("text-center");
+        }
+    }
+}
+
+async function renderArticle(slug) {
     let converter = new showdown.Converter();
     let resp = await fetch(`articles/${slug}/article.md`);
 
@@ -9,6 +23,12 @@ async function renderArticle(slug) {
     articleMain.innerHTML = html;
 
     hljs.highlightAll();
+
+    if (canLatexLoad) {
+        renderLatex();
+    } else {
+        document.addEventListener("DOMContentLoaded", renderLatex);
+    }
 }
 
 async function renderOverviewPage() {
@@ -25,6 +45,10 @@ async function renderOverviewPage() {
     let template = Handlebars.compile(hb);
     articleMain.innerHTML = template(context);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    canLatexLoad = true;
+});
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),

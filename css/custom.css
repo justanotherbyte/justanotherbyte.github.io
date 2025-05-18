@@ -10,13 +10,13 @@ html {
 	scroll-behavior: smooth;
 }
 
-code {
+code:not(.latex) {
     background-color: var(--color-zinc-300);
     padding: 5px;
 }
 
 @media (prefers-color-scheme: dark) {
-    code {
+    code:not(.latex) {
         background-color: var(--color-zinc-800);
         padding: 5px;
     }
