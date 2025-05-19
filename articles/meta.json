@@ -1,6 +1,16 @@
 [
     {
-        "category": "Technical",
+        "category": "Machine Learning",
+        "posts": [
+            {
+                "name": "Generalized Linear Models",
+                "slug": "glms",
+                "description": "An insightful crash course into Generalized Linear Models (GLMs). Trust me, they're so cool."
+            }
+        ]
+    },
+    {
+        "category": "Rogue OS",
         "posts": [
             {
                 "name": "Building Rogue",
