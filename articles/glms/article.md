@@ -98,4 +98,39 @@ The latter definition for <ila>a(\eta)</ila> can be found by re-arranging the de
 
 <br>
 
-*More coming soon, last updated: 19 May 01:08*
+## Constructing GLMs
+<br>
+
+Constructing GLMs involves the same set of recurring steps. Depending on the task at hand, an appropriate distribution must be chosen, manipulated into the exponential family form, and it's respective set of parameters found. To finally construct the GLM, two **main** assumptions/design-choices need to be made.
+
+<br>
+
+- The first design choice is relating <ila>\eta = \theta^T x</ila> where <ila>\theta, x \in \R^n</ila>. <ila>\theta</ila> is a set of **learnable** parameters, and <ila>n</ila> is the number of features you have.
+- At test time, the output of the model is the expected value of the distribution, i.e <ila>E[y|x; \theta]</ila>.
+
+<br>
+
+GLMs have a nice property whereby their expected value is actually given by the derivative of <ila>a(\eta)</ila> with respect to <ila>\eta</ila>, which is a lot nicer than the traditional integral approach of calculating the expected value of a random variable or distribution. To convince you of this, I'll write a quick derivation for the expected value of the log-partition that we derived for Bernoulli:
+
+<br>
+
+```latex
+a(\eta) = \ln(1 + e^\eta)
+```
+<br>
+
+```latex
+\frac{\partial}{\partial \eta} (\ln(1 + e^\eta)) = \frac{e^\eta}{1 + e^\eta} = \frac{1}{1 + e^{-\eta}}
+```
+<br>
+
+This is indeed the sigmoid function that we use in Logistic Regression! If you're interested in a similar derivation for Linear Regression using the Gaussian Distribution, I've uploaded full derivations for everything [here](articles/glms/lg-gaussian-derivation.pdf), since the CS229 lecture notes tend to skip over some algebra (which is fair, just some people may want to see all the steps).
+
+<br>
+
+
+![GLM diagram](articles/glms/diagram.png "A good representation of how GLMs should be thought about.")
+
+<br>
+
+*More coming soon: last updated 19/05/2025 12:06*
