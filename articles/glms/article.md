@@ -124,7 +124,7 @@ a(\eta) = \ln(1 + e^\eta)
 ```
 <br>
 
-This is indeed the sigmoid function that we use in Logistic Regression! If you're interested in a similar derivation for Linear Regression using the Gaussian Distribution, I've uploaded full derivations for everything [here](articles/glms/lg-gaussian-derivation.pdf), since the CS229 lecture notes tend to skip over some algebra (which is fair, just some people may want to see all the steps).
+This is indeed the sigmoid function that we use in Logistic Regression! If you're interested in a similar derivation for Linear Regression using the Gaussian Distribution, I've uploaded full derivations for everything [here](articles/glms/glms-derivations.pdf), since the CS229 lecture notes tend to skip over some algebra (which is fair, just some people may want to see all the steps).
 
 <br>
 
