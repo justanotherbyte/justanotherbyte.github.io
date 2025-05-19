@@ -1,7 +1,7 @@
 var canLatexLoad = false;
 
 function renderLatex() {
-    let elements = document.querySelectorAll(".latex, inlinelatex");
+    let elements = document.querySelectorAll(".latex, ila");
 
     for (let i = 0; i < elements.length; i++) {
         let el = elements[i];
