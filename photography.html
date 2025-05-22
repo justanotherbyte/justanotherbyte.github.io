@@ -34,12 +34,16 @@
         content="Hey there! I'm Viswa, an incoming Electronic and Information Engineering student at Imperial College London. My interests lie primarily in Robotics, FPGAs and Quantum Computing." />
     <meta property="twitter:image" content="https://justanotherbyte.github.io/images/icon.svg" />
 
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="0f463efc-4e43-41e4-9116-3c723060af22"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="0f463efc-4e43-41e4-9116-3c723060af22"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+        integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+        integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+        crossorigin="anonymous"></script>
 
     <title>Viswa Marepalli</title>
 </head>
@@ -97,39 +101,42 @@
     <main class="container mx-auto max-w-screen-xl p-8" x-data="{modalShown: false}">
         <h1 class="dark:text-white text-xl">My Photography</h1>
         <hr class="my-4 h-0.5 border-t-0 bg-zinc-300 dark:bg-white/10" />
-            <div id="photography-grid" class="grid lg:grid-cols-4 gap-3 sm:grid-cols-2">
-                <script id="photography-hb" type="text/x-handlebars">
+        <div id="photography-grid" class="grid lg:grid-cols-4 gap-3 sm:grid-cols-2">
+            <script id="photography-hb" type="text/x-handlebars">
                     {{#each image}}
                     <div>
                         <img @click="modalShown = !modalShown" src="https://raw.githubusercontent.com/justanotherbyte/justanotherbyte.github.io/refs/heads/main/data/photos/{{this}}" alt="{{this}}" class="rounded-md lg:h-full object-cover hover:scale-105 duration-200" onclick="updateModalImage('{{this}}')">
                     </div>
                     {{/each}}
                 </script>
-            </div>
+        </div>
 
-            <div id="imageModal" x-show="modalShown" class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                <div class="fixed inset-0 bg-zinc-300/65 dark:bg-zinc-500/65 transition-opacity" aria-hidden="true"></div>
-              
-                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-                  <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                    <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                      <div class="bg-white dark:bg-zinc-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div class="sm:flex sm:items-start">
-                          <div class="mt-3 text-center sm:mt-0 sm:text-left">
-                            <div class="mt-2">
-                              <img id="modalImage" src="data/photos/IMG_2232 2.JPG" class="rounded-md">
+        <div id="imageModal" x-show="modalShown" class="relative z-10 hidden" aria-labelledby="modal-title"
+            role="dialog" aria-modal="true">
+            <div class="fixed inset-0 bg-zinc-300/65 dark:bg-zinc-500/65 transition-opacity" aria-hidden="true"></div>
+
+            <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <div
+                        class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                        <div class="bg-white dark:bg-zinc-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <div class="sm:flex sm:items-start">
+                                <div class="mt-3 text-center sm:mt-0 sm:text-left">
+                                    <div class="mt-2">
+                                        <img id="modalImage" src="data/photos/IMG_2232 2.JPG" class="rounded-md">
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
-                      <div class="bg-zinc-200 dark:bg-zinc-800 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                        <button @click="modalShown = !modalShown" type="button" class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 sm:ml-3 sm:w-auto">Close</button>
-                      </div>
+                        <div class="bg-zinc-200 dark:bg-zinc-800 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                            <button @click="modalShown = !modalShown" type="button"
+                                class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 sm:ml-3 sm:w-auto">Close</button>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              
+            </div>
+        </div>
+
     </main>
 
     <footer class="container mx-auto max-w-screen-xl p-8">
