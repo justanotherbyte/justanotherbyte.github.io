@@ -101,7 +101,7 @@
                 <script id="photography-hb" type="text/x-handlebars">
                     {{#each image}}
                     <div>
-                        <img @click="modalShown = !modalShown" src="data/photos/{{this}}" alt="{{this}}" class="rounded-md lg:h-full object-cover hover:scale-105 duration-200" onclick="updateModalImage('{{this}}')">
+                        <img @click="modalShown = !modalShown" src="https://raw.githubusercontent.com/justanotherbyte/justanotherbyte.github.io/refs/heads/main/data/photos/{{this}}" alt="{{this}}" class="rounded-md lg:h-full object-cover hover:scale-105 duration-200" onclick="updateModalImage('{{this}}')">
                     </div>
                     {{/each}}
                 </script>
