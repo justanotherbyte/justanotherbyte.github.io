@@ -11,7 +11,7 @@ html {
 }
 
 code:not(.latex) {
-    background-color: var(--color-zinc-300);
+    background-color: var(--color-zinc-200);
     padding: 5px;
 }
 
