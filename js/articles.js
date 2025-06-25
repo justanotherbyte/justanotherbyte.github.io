@@ -71,5 +71,5 @@ let slug = params.slug;
 if (slug == null) {
     renderOverviewPage();
 } else {
-    renderArticle(slug)
+    renderArticle(slug);
 }
