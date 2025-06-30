@@ -17,7 +17,7 @@ function updateModalImage(img) {
     document.getElementById("modalImage").src = `data/photos/${img}`;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("imageModal").classList.remove("hidden");
 })
 
