@@ -42,7 +42,7 @@
     <nav x-data="{ open: true }" class="bg-white border-zinc-200 dark:bg-zinc-900 sticky top-0 z-40">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="images/icon.svg" class="h-8 rounded-lg" alt="Viswa's Logo" />
+                <!-- <img src="images/icon.svg" class="h-8 rounded-lg" alt="Viswa's Logo" /> -->
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Viswa
                     Marepalli</span>
             </a>
@@ -151,6 +151,42 @@
             </div>
         </section>
         <br>
+        <section id="publications">
+            <div class="relative flex w-full">
+                <h1 class="dark:text-white text-xl">Experience</h1>
+                <!-- <a
+                    class="dark:text-zinc-600 text-zinc-300 absolute right-0 text-xl hover:text-zinc-400 duration-200 transition">View
+                    All ></a> -->
+            </div>
+            <hr class="my-4 h-0.5 border-t-0 bg-zinc-300 dark:bg-white/10" />
+
+            <div class="grid md:grid-cols-1 gap-x-2 sm:grid-cols-1 md:gap-y-0 gap-y-2">
+                <div class="flex flex-col bg-zinc-100 dark:bg-zinc-800 rounded-none p-4 border border-zinc-300 dark:border-zinc-700 gap-y-2">
+                    <div class="flex flex-row gap-x-3">
+                        <a href="https://useautumn.com" target="_blank">
+                            <img class="rounded-sm w-15 h-auto"
+                            src="https://media.licdn.com/dms/image/v2/D4D0BAQHgBF5sfPGjmg/company-logo_200_200/company-logo_200_200/0/1738264346218/useautumn_logo?e=1755129600&v=beta&t=Ek6JSFjLovzGMEeFQqQh0PqVZ2M7UJwBw0TEODQlYRg">
+                        </a>
+                        <div>
+                            <a href="https://useautumn.com" target="_blank" class="dark:text-white hover:underline active:text-zinc-400 duration-200">
+                                Intern @ Autumn (YC F24)
+                            </a>
+                                
+                            <p class="text-zinc-400">July 2025 - Present.</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-600 dark:text-zinc-400">
+                        - Rewrote Python SDK to correctly adhere to PEP 8 and other industry conventions. Introduced
+                        async support + wrote a server handler mountable to any ASGI app (pre-internship).
+                        <br>
+                        - Wrote a quick and dirty implementation for usage limits, allowing users to set caps on paid features (e.g $0.50 per API call up to 1000 API calls).
+                        <br>
+                        - Currently writing Autumn CLI in TypeScript: Implemented OTP auth similar to GitHub & Supabase.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br>
         <section id="projects">
             <div class="relative flex w-full">
                 <h1 class="dark:text-white text-xl">Projects</h1>
@@ -167,12 +203,12 @@
                         <a class="dark:text-white" href="https://github.com/{{this.author}}/{{this.name}}"><span class="text-zinc-500 text-xs">{{this.author}}/</span>{{this.name}}</a>
                         <p class="text-zinc-600 dark:text-zinc-400 mt-1 mb-6">{{this.description}}</p>
                         <div class="flex relative">
-                            
+
                         </div>
 
                         <h3 class="absolute left-4 bottom-2 text-[{{this.languageColor}}]">{{this.language}}</h3>
                         <h3 class="absolute right-4 bottom-2 dark:text-white">{{this.stars}} ⭐</h3>
-                        
+
                     </div>
                     {{/each}}
                 </script>
@@ -257,6 +293,8 @@
                 </script>
             </div>
         </section>
+        <br>
+
     </main>
 
     <footer class="container mx-auto max-w-screen-xl p-8">
